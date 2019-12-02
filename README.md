@@ -2,7 +2,7 @@
 
 ## gitbook install
 
-## gitbook build ./ ./docs --clean
+# gitbook build ./ ./docs --clean
 
 ## gitp
 
