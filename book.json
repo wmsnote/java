@@ -1,0 +1,24 @@
+{
+    "plugins": [
+        "-lunr",
+        "-search",
+        "search-pro",
+        "theme-comscore",
+        "chapter-fold",
+        "expandable-chapters",
+        "splitter",
+        "tbfed-pagefooter",
+        "advanced-emoji",
+        "code",
+        "popup",
+        "copy-code-button",
+        "back-to-top-button"
+    ],
+    "pluginsConfig": {
+        "tbfed-pagefooter": {
+            "copyright":"Copyright &copy wu_mingsheng@126.com 2017",
+            "modify_label": "该文件最后修改时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        }
+    }
+}
