@@ -7,11 +7,9 @@
         "chapter-fold",
         "splitter",
         "tbfed-pagefooter",
-        "advanced-emoji",
         "code",
         "page-toc-button",
         "popup",
-        "copy-code-button",
         "back-to-top-button"
     ],
     "pluginsConfig": {

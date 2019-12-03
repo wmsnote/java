@@ -63,8 +63,8 @@ AccessiableObject
 
 **注意:**
 
-> clazz.getDeclaredXXX : 获取全部成员,忽略权限修饰,暴力获取clazz.getXXX获取公共(public)成员
-> 成员对象.setAccessiable(true) : 忽略权限修饰,暴力访问
+> 1. clazz.getDeclaredXXX : 获取全部成员,忽略权限修饰,暴力获取clazz.getXXX获取公共(public)成员
+> 2. 成员对象.setAccessiable(true) : 忽略权限修饰,暴力访问
 
 ### 4. 获取方法
 
