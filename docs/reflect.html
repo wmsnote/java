@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · GitBook</title>
+        <title>反射 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -89,8 +89,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="map-foreach.html" />
     
+    <link rel="prev" href="annotation-reflect.html" />
     
 
     </head>
@@ -119,7 +119,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -307,7 +307,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="reflect.html">
+        <li class="chapter active" data-level="1.12" data-path="reflect.html">
             
                 <a href="reflect.html">
             
@@ -350,7 +350,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >反射</a>
     </h1>
 </div>
 
@@ -365,12 +365,49 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
-<h2 id="gitbook-install">gitbook install</h2>
-<h1 id="gitbook-build--docs---clean">gitbook build ./ ./docs --clean</h1>
-<h2 id="gitp">gitp</h2>
+                                <h1 id="&#x53CD;&#x5C04;-&#x63D0;&#x9AD8;&#x6269;&#x5C55;&#x6027;">&#x53CD;&#x5C04;-&#x63D0;&#x9AD8;&#x6269;&#x5C55;&#x6027;</h1>
+<p>&#x53CD;&#x5C04;&#x7684;&#x5BF9;&#x8C61;: <strong>Class</strong> <strong>Field</strong> <strong>Constractor</strong> </p>
+<h2 id="1-&#x521B;&#x5EFA;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;class&#x5BF9;&#x8C61;&#x7684;3&#x79CD;&#x65B9;&#x6CD5;">1. &#x521B;&#x5EFA;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;(.class)&#x5BF9;&#x8C61;&#x7684;3&#x79CD;&#x65B9;&#x6CD5;</h2>
+<h3 id="1-&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x90FD;&#x6709;&#x9759;&#x6001;&#x5B57;&#x6BB5;class&#x8FD4;&#x56DE;&#x8BE5;&#x7C7B;&#x578B;&#x7684;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;">1. &#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x90FD;&#x6709;&#x9759;&#x6001;&#x5B57;&#x6BB5;class,&#x8FD4;&#x56DE;&#x8BE5;&#x7C7B;&#x578B;&#x7684;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;</h3>
+<pre><code class="lang-java">Class clazz = Person.class;
+</code></pre>
+<h3 id="2-&#x4EFB;&#x4F55;&#x7C7B;&#x90FD;&#x6709;getclass&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x5728;object&#x7C7B;&#x4E2D;&#x901A;&#x8FC7;&#x5BF9;&#x8C61;&#x8C03;&#x7528;getclass&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;">2. &#x4EFB;&#x4F55;&#x7C7B;&#x90FD;&#x6709;getClass()&#x65B9;&#x6CD5;,&#x5B9A;&#x4E49;&#x5728;Object&#x7C7B;&#x4E2D;,&#x901A;&#x8FC7;&#x5BF9;&#x8C61;&#x8C03;&#x7528;getClass()&#x65B9;&#x6CD5;,&#x8FD4;&#x56DE;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;</h3>
+<pre><code class="lang-java">Person person = <span class="hljs-keyword">new</span> Person();
+Class clazz = person.getClass();
+</code></pre>
+<h3 id="3-&#x7C7B;class&#x9759;&#x6001;&#x65B9;&#x6CD5;forname&#x8FD4;&#x56DE;&#x7C7B;&#x540D;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;">3. &#x7C7B;Class&#x9759;&#x6001;&#x65B9;&#x6CD5;forName()&#x8FD4;&#x56DE;&#x7C7B;&#x540D;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;</h3>
+<pre><code class="lang-java">Class clazz = Class.forName(<span class="hljs-string">&quot;com.commom.Person&quot;</span>);
+</code></pre>
+<p>&#x6CE8;&#x610F;: &#x5B57;&#x7B26;&#x4E32;&#x5FC5;&#x987B;&#x4E3A;&#x5305;&#x540D;+&#x7C7B;&#x540D;,&#x5426;&#x5219; classNotFindException;</p>
+<h2 id="2-&#x521B;&#x5EFA;&#x5B9E;&#x4F8B;">2. &#x521B;&#x5EFA;&#x5B9E;&#x4F8B;</h2>
+<h3 id="1-&#x8C03;&#x7528;&#x7A7A;&#x53C2;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x5B9E;&#x4F8B;">1. &#x8C03;&#x7528;&#x7A7A;&#x53C2;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x5B9E;&#x4F8B;</h3>
+<pre><code class="lang-java">Object object = clazz.newInstance();
+</code></pre>
+<h3 id="2-&#x8C03;&#x7528;&#x5E26;&#x53C2;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x5B9E;&#x4F8B;">2. &#x8C03;&#x7528;&#x5E26;&#x53C2;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x5B9E;&#x4F8B;</h3>
+<pre><code class="lang-java">Constractor constractor = clazz.getDeclaredConstractor(String.class,<span class="hljs-keyword">int</span>.class);<span class="hljs-comment">//&#x6CE8;&#x610F;: &#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x7C7B;&#x578B;,&#x83B7;&#x53D6;&#x5BF9;&#x5E94;&#x7C7B;&#x578B;&#x7684;&#x6784;&#x9020;&#x5668;&#x5BF9;&#x8C61;</span>
+Object object = constractor.newInstance(<span class="hljs-string">&quot;wms&quot;</span>,<span class="hljs-number">30</span>);<span class="hljs-comment">//&#x6784;&#x9020;&#x5668;&#x5BF9;&#x8C61;&#x4F20;&#x5165;&#x5B9E;&#x53C2;,&#x521B;&#x5EFA;&#x5BF9;&#x8C61;</span>
+</code></pre>
+<h3 id="3-&#x83B7;&#x53D6;&#x5B57;&#x6BB5;">3. &#x83B7;&#x53D6;&#x5B57;&#x6BB5;</h3>
+<pre><code class="lang-java">Field name = clazz. getDeclaredField ( <span class="hljs-string">&quot;name&quot;</span>) ;<span class="hljs-comment">//&#x901A;&#x8FC7;&#x5B57;&#x6BB5;&#x540D;,&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;</span>
+Field [] fields = clazz .getFields () ;<span class="hljs-comment">//&#x83B7;&#x53D6;&#x6240;&#x6709;&#x5B57;&#x6BB5;</span>
+</code></pre>
+<pre><code class="lang-log">AccessiableObject
+     |--Method
+     |--Field
+     |--Constractor
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;:</strong></p>
+<blockquote>
+<p>clazz.getDeclaredXXX : &#x83B7;&#x53D6;&#x5168;&#x90E8;&#x6210;&#x5458;,&#x5FFD;&#x7565;&#x6743;&#x9650;&#x4FEE;&#x9970;,&#x66B4;&#x529B;&#x83B7;&#x53D6;clazz.getXXX&#x83B7;&#x53D6;&#x516C;&#x5171;(public)&#x6210;&#x5458;
+&#x6210;&#x5458;&#x5BF9;&#x8C61;.setAccessiable(true) : &#x5FFD;&#x7565;&#x6743;&#x9650;&#x4FEE;&#x9970;,&#x66B4;&#x529B;&#x8BBF;&#x95EE;</p>
+</blockquote>
+<h3 id="4-&#x83B7;&#x53D6;&#x65B9;&#x6CD5;">4. &#x83B7;&#x53D6;&#x65B9;&#x6CD5;</h3>
+<pre><code class="lang-java">Method method = clazz.getDeclaredMethod(String.class,<span class="hljs-keyword">int</span>.class);<span class="hljs-comment">//&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x65B9;&#x6CD5;</span>
+Method [] declaredMethods = clazz . getDeclaredMethods() ;<span class="hljs-comment">//&#x83B7;&#x53D6;&#x6240;&#x6709;&#x65B9;&#x6CD5;</span>
+method.invoke(object,<span class="hljs-string">&quot;wms&quot;</span>,<span class="hljs-number">30</span>);<span class="hljs-comment">//&#x8C03;&#x7528;&#x4E00;&#x822C;&#x65B9;&#x6CD5;,&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;,&#x82E5;&#x4E3A;&#x9759;&#x6001;,object&#x4E3A;null</span>
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; wu_mingsheng@126.com 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;
-2019-12-02 22:02:27
+2019-12-03 21:26:35
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -399,10 +436,10 @@
 
             
                 
-                
-                <a href="map-foreach.html" class="navigation navigation-next navigation-unique" aria-label="Next page: map遍历">
-                    <i class="fa fa-angle-right"></i>
+                <a href="annotation-reflect.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 注解的定义和注解的反射">
+                    <i class="fa fa-angle-left"></i>
                 </a>
+                
                 
             
         
@@ -411,7 +448,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"map遍历","level":"1.2","depth":1,"path":"map-foreach.md","ref":"map-foreach.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","theme-comscore","chapter-fold","splitter","tbfed-pagefooter","advanced-emoji","code","page-toc-button","popup","copy-code-button","back-to-top-button"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy wu_mingsheng@126.com 2017","modify_label":"该文件最后修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-12-02T14:02:27.111Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-03T13:26:57.363Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"反射","level":"1.12","depth":1,"previous":{"title":"注解的定义和注解的反射","level":"1.11","depth":1,"path":"annotation-reflect.md","ref":"annotation-reflect.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","theme-comscore","chapter-fold","splitter","tbfed-pagefooter","advanced-emoji","code","page-toc-button","popup","copy-code-button","back-to-top-button"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy wu_mingsheng@126.com 2017","modify_label":"该文件最后修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"reflect.md","mtime":"2019-12-03T13:26:35.780Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-03T13:26:57.363Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
