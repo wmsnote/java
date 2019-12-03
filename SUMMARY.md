@@ -9,3 +9,5 @@
 * [枚举](enum.md)
 * [guava教程](guava/readme.md)
     * [guava-cache缓存](guava/cache.md)
+    * [guava-retry重试](guava/retry.md)
+    * [字符串拼接和切割](guava/spliter.md)
