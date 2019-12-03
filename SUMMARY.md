@@ -6,3 +6,4 @@
 * [泛型详解](java-generic.md)
 * [bean相互转换](bean-convert.md)
 * [java-8-stream操作](stream.md)
+* [guava-cache缓存](guava/cache.md)
