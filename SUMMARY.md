@@ -12,3 +12,4 @@
     * [guava-retry重试](guava/retry.md)
     * [字符串拼接和切割](guava/spliter.md)
 * [程序员如何优雅的进行重试](retry.md)
+* [lambda表达式](lambda.md)
