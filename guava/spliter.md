@@ -33,7 +33,7 @@ List<String> bigbayAppIdList = Splitter.on(",")
 
 | **方法**                          | **描述**                      |
 | ------------------------------- | --------------------------- |
-| {++ omitEmptyStrings() ++}      | 从结果中自动忽略空字符串                |
-| {++trimResults()  ++}           | 移除结果字符串的前导空白和尾部空白           |
-| {++trimResults(CharMatcher) ++} | 给定匹配器，移除结果字符串的前导匹配字符和尾部匹配字符 |
-| {++ limit(int) ++}              | 限制拆分出的字符串数量                 |
+| omitEmptyStrings()        | 从结果中自动忽略空字符串                |
+| trimResults()             | 移除结果字符串的前导空白和尾部空白           |
+| trimResults(CharMatcher)  | 给定匹配器，移除结果字符串的前导匹配字符和尾部匹配字符 |
+| limit(int)                | 限制拆分出的字符串数量                 |
