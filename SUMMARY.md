@@ -13,5 +13,7 @@
     * [字符串拼接和切割](guava/spliter.md)
 * [程序员如何优雅的进行重试](retry.md)
 * [lambda表达式](lambda.md)
-* [注解的定义和注解的反射](annotation-reflect.md)
+* [注解](README.md)
+    * [注解的定义和注解的反射](annotation-reflect.md)
+    * [java8-可重复注解](repeatable-annotation.md)
 * [反射](reflect.md)
